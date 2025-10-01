@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function ProposalPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -175,13 +177,13 @@ export default function ProposalPage() {
           {/* 제품 이미지 추가 */}
           <div className="grid md:grid-cols-3 gap-4">
             <div className="relative h-64 rounded-xl overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=600&h=400&fit=crop&q=80" alt="수면" className="w-full h-full object-cover" />
+              <Image src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=600&h=400&fit=crop&q=80" alt="수면" fill className="object-cover" />
             </div>
             <div className="relative h-64 rounded-xl overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&q=80" alt="건강" className="w-full h-full object-cover" />
+              <Image src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&q=80" alt="건강" fill className="object-cover" />
             </div>
             <div className="relative h-64 rounded-xl overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop&q=80" alt="휴식" className="w-full h-full object-cover" />
+              <Image src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop&q=80" alt="휴식" fill className="object-cover" />
             </div>
           </div>
         </div>
@@ -516,10 +518,11 @@ export default function ProposalPage() {
             ].map((project, index) => (
               <div key={index} className={`bg-white rounded-xl overflow-hidden ${project.current ? 'ring-2 ring-blue-500' : ''}`}>
                 <div className="relative h-48 bg-gray-200">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                   <div className="absolute top-3 right-3 px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-900">
                     {project.category}
